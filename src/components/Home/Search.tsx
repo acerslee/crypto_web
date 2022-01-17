@@ -1,12 +1,11 @@
-import { FormEvent, useState, useRef} from 'react'
+import React, { FormEvent, useState, useRef} from 'react'
 import axios from 'axios'
-// import { } put in search mag glass icon here
 
-const Search = () => {
+const Search: React.FC = () => {
 
     const [tickerSymbol, setTickerSymbol] = useState<string>('')
 
-    const inputRef = useRef<string>('')
+    const inputRef = useRef(null)
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -14,7 +13,7 @@ const Search = () => {
             const fetch = await axios.post('/api/fetchData', {tickerSymbol})
             const response = await fetch.data
             console.log(response)
-            inputRef.current.clear()
+            inputRef?.current?.clear()
         } catch(err) {
             console.error(err)
         }
