@@ -1,7 +1,12 @@
-import React, { useState, SyntheticEvent } from 'react'
-import axios from 'axios'
+import React, { FC, useState, SyntheticEvent } from 'react'
+import { useSession, signIn } from 'next-auth/react'
 
-const LoginCard = () => {
+import axios from 'axios'
+import { HeaderText } from '../../ui/Text'
+
+const LoginCard:FC = () => {
+    const { data: session } = useSession()
+
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [isError, setError] = useState<boolean>(false)
@@ -35,6 +40,14 @@ const LoginCard = () => {
                 />
                 <button type='submit'>Submit</button>
             </form>
+            {!session &&
+                <div>
+                    <HeaderText>
+                        Or Sign in using...
+                    </HeaderText>
+                    <button onClick={() => signIn()} />
+                </div>
+            }
         </>
     )
 }

@@ -11,9 +11,9 @@
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^1.7.1",
     "@supabase/supabase-js": "^1.28.5",
-    "@types/styled-components": "^5.1.20",
     "axios": "^0.24.0",
     "next": "12.0.4",
+    "next-auth": "^4.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "^7.2.6",
@@ -26,8 +26,17 @@
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
     "@types/react-redux": "^7.1.22",
+    "@types/styled-components": "^5.1.21",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "prettier": "^2.5.1",
     "typescript": "4.5.2"
   }
 }

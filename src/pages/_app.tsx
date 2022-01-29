@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import App from 'next/app'
 import { Provider } from 'react-redux'
 import { store } from '../store'
+import { SessionProvider } from 'next-auth/react'
 
 type AppProps<P = any> = {
   Component: P
@@ -19,11 +20,14 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps: { session, ...pageProps} } = this.props
+
     return(
-      <Provider store = {store}>
-        <Component {...pageProps} />
-      </Provider>
+      <SessionProvider session={session}>
+        <Provider store = {store}>
+          <Component {...pageProps} />
+        </Provider>
+      </SessionProvider>
     )
   }
 }
