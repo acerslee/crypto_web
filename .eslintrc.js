@@ -14,15 +14,11 @@ module.export = {
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/react",
     "plugin:react/recommended",
     "prettier/@typescript-lint",
     "plugin:prettier/recommended",
   ],
   plugins: [
-    "react",
-    "react-hooks",
     "@typescript-eslint",
   ],
   rules: {}

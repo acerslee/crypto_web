@@ -23,7 +23,9 @@ const LoginCard:FC = () => {
     return(
         <>
             {isError &&
-                <h1>Invalid username or password</h1>
+                <HeaderText>
+                    Invalid username or password
+                </HeaderText>
             }
             <form onSubmit={submitLogin}>
                 <input
@@ -42,7 +44,7 @@ const LoginCard:FC = () => {
             </form>
             {!session &&
                 <div>
-                    <HeaderText>
+                    <HeaderText size={2}>
                         Or Sign in using...
                     </HeaderText>
                     <button onClick={() => signIn()} />

@@ -1,10 +1,14 @@
 import React, { FC } from 'react'
 import { TextProps } from './_types'
+import { buildStyle } from './styles'
+import { WebSheet } from '../utility'
 
-const HeaderText:FC<TextProps> = ({ children }) => {
+const HeaderText:FC<TextProps> = props => {
+    const style = WebSheet.create(buildStyle({ textType: 'header', ...props }))
+
     return(
-        <div>
-            {children}
+        <div style={style.text}>
+            {props.children}
         </div>
     )
 }
