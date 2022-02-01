@@ -5,13 +5,13 @@ interface SharedProps {
     size?: 'large' | 'medium' | 'small'
     type?: 'primary' | 'secondary'
     disabled?: boolean
+    hover?: boolean
 }
 
 export interface ButtonProps extends SharedProps {
     onClick?(): void
     onHover?(): void
     loading?: boolean
-    hover?: boolean
     label?: string
     children?: ReactNode
 }

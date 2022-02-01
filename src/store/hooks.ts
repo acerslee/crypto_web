@@ -1,13 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 type Ticker = {
-  id?: number;
-  ticker: string;
+  id?: number
+  ticker: string
 }
 
 type TickerList = {
-  tickers: Ticker[];
+  tickers: Ticker[]
 }
 
 const initialState: TickerList = {
@@ -39,7 +39,7 @@ const { getTickers,
 
 export const getTickersState = () => async (dispatch: Function) => {
   try {
-    const response = await axios.get('/api/getTickers');
+    const response = await axios.get('/api/getTickers')
     dispatch(getTickers(response.data))
   } catch (e) {
     return console.error(e)

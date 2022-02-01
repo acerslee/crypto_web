@@ -4,7 +4,7 @@ import { buildStyle } from './styles'
 import { WebSheet } from '../utility'
 
 const BodyText:FC<TextProps> = props => {
-    const style = WebSheet.create(buildStyle({ textType: 'body', ...props }))
+    const style = WebSheet.create(buildStyle({ ...props }))
 
     return(
         <div style={style.text}>

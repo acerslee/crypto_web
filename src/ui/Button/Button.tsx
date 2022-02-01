@@ -3,7 +3,7 @@ import { WebSheet } from '../utility'
 import { buildStyle } from './styles'
 import { ButtonProps } from './_types'
 
-const Button:FC<ButtonProps> = (props) => {
+const Button:FC<ButtonProps> = props => {
     const { label, children, onClick, disabled } = props
 
     const [ hover, setHover ] = useState<boolean>(false)
@@ -11,9 +11,9 @@ const Button:FC<ButtonProps> = (props) => {
     const styles = WebSheet.create(
         buildStyle({
             ...props,
+            hover
         })
     )
-
 
     return(
         <>
